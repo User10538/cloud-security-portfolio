@@ -1,51 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+
   <title>Sophie | Cloud Engineer ☁️</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body>
- <div class="top-links">
-      <a href="https://sophieworld.dev">🌍 Home</a>
-      <a href="#projects">💻 Projects</a>
-      <a href="https://github.com/User10538">💻 GitHub</a>
-      <a href="#contact">📬 Contact Me</a>
-    </div>
+
+  <!-- NAV -->
+  <div class="top-links">
+    <a href="https://sophieworld.dev">🏠 Home</a>
+
+    <a href="#projects">💻 Projects</a>
+
+    <a
+      href="https://github.com/User10538"
+      target="_blank"
+    >
+      🐙 GitHub
+    </a>
+
+    <a href="#contact">📬 Contact</a>
+  </div>
+
   <!-- HERO -->
   <header class="hero">
+
     <h1>
-      Building cloud projects that are<br>
-      <span>simple, reliable & fun ☁️</span>
+      Building cloud projects that are
+      simple, reliable & fun ☁️
     </h1>
+
     <p class="tagline">
       Aspiring Cloud Engineer who enjoys turning ideas into real systems ✨
     </p>
-       
+
   </header>
 
-  <!-- ACTUAL CONTACT FORM -->
-    <section class="projects">
-    <h2>💌 Contact ME</h2>
+  <!-- CONTACT -->
+<section class="contact-section" id="contact">
 
-<div class="projects-container">
-  <div class="project-card">
-        <form id="contactForm">
-          <p><input type="text" name="name" placeholder="Your Name" required /></p>
-          <input type="email" name="email" placeholder="Your Email" required /><br><br>
-          <textarea name="message" placeholder="Your Message" required aria-setsize="32"></textarea><br><br>
-              <button type="submit">Send</button>
-            </form>
-            
-            <p id="responseMsg"></p>
+  <div class="contact-header">
+    <h2>💌 Let’s Connect</h2>
 
+    <p>
+      Interested in cloud engineering,
+      backend systems, or collaboration opportunities?
+      Feel free to reach out ✨
+    </p>
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- MAIN FORM -->
+    <div class="project-card contact-main">
+
+      <h3>📬 Send a Message</h3>
+
+      <form id="contactForm">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        >
+
+        <textarea
+          name="message"
+          placeholder="Tell me about your project, idea, or opportunity..."
+          required
+        ></textarea>
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          🚀 Send Message
+        </button>
+
+      </form>
+
+      <p id="responseMsg"></p>
+
+    </div>
+
+    <!-- SIDE PANEL -->
+    <aside class="project-card contact-side">
+
+      <h3>✨ Currently Exploring</h3>
+
+      <p>
+        Building secure serverless systems,
+        experimenting with cloud automation,
+        and learning more about scalable backend architecture ☁️
+      </p>
+
+      <div class="tags">
+        <span>☁️ AWS</span>
+        <span>⚡ Serverless</span>
+        <span>🔐 Security</span>
+        <span>⚙️ CI/CD</span>
+        <span>🧠 Cognito</span>
+        <span>🚀 CloudFront</span>
+      </div>
+
+      <div class="contact-links">
+        
+        <a
+          href="https://github.com/User10538"
+          target="_blank"
+        >
+          🐙 GitHub
+        </a>
+
+        <a href="resume.pdf" download>
+          📄 Resume
+        </a>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+  <!-- CONTACT SCRIPT -->
   <script>
     const form = document.getElementById("contactForm");
     const responseMsg = document.getElementById("responseMsg");
@@ -62,15 +163,22 @@
       };
 
       try {
-        const res = await fetch("https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
+
+        const res = await fetch(
+          "https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/contact",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(data)
+          }
+        );
 
         const text = await res.text();
+
         let result;
 
         try {
@@ -80,14 +188,21 @@
         }
 
         if (res.status === 200) {
+
           responseMsg.innerText = "✅ Message sent!";
+
           form.reset();
+
         } else {
-          responseMsg.innerText = "❌ " + result.error;
+
+          responseMsg.innerText =
+            "❌ " + result.error;
         }
 
       } catch (err) {
-        responseMsg.innerText = "❌ Something went wrong";
+
+        responseMsg.innerText =
+          "❌ Something went wrong";
       }
     });
   </script>
@@ -99,21 +214,33 @@
 
   <!-- SCROLL ANIMATION -->
   <script>
-    const elements = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+    const elements =
+      document.querySelectorAll("section");
+
+    const observer =
+      new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+
+        });
+
       });
-    });
 
     elements.forEach(el => {
+
       el.classList.add("fade-in");
+
       observer.observe(el);
+
     });
+
   </script>
 
 </body>
+
 </html>

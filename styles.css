@@ -797,3 +797,62 @@ footer {
   }
 
 }
+
+/* =========================================
+   ARCHITECTURE PREVIEW
+========================================= */
+
+.architecture-preview {
+  text-align: center;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+.architecture-preview p {
+  margin: 0 auto 28px;
+}
+
+.architecture-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.architecture-tags span {
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  color: #dbe7ff;
+
+  font-weight: 500;
+
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.architecture-tags span:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(255,255,255,0.08);
+}

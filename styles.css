@@ -797,7 +797,6 @@ footer {
   }
 
 }
-
 /* =========================================
    ARCHITECTURE PREVIEW
 ========================================= */
@@ -808,12 +807,28 @@ footer {
   margin: 0 auto;
 }
 
-.architecture-preview h2 {
-  margin-bottom: 12px;
+.architecture-card {
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 24px;
+
+  padding: 42px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.2);
 }
 
-.architecture-preview p {
-  margin-bottom: 28px;
+.architecture-card p {
+  margin:
+    0 auto 30px;
 
   max-width: 700px;
 }
@@ -822,6 +837,8 @@ footer {
   display: flex;
 
   flex-wrap: wrap;
+
+  justify-content: center;
 
   gap: 14px;
 }
@@ -832,8 +849,6 @@ footer {
 
   border:
     1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(12px);
 
   padding: 12px 18px;
 

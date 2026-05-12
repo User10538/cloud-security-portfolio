@@ -69,6 +69,8 @@ body {
   overflow-x: hidden;
 
   position: relative;
+
+  padding-top: 70px;
 }
 
 /* =========================================
@@ -102,6 +104,7 @@ body::after {
 
 .top-links {
   position: fixed;
+
   top: 0;
   left: 0;
   right: 0;
@@ -111,22 +114,37 @@ body::after {
   align-items: center;
 
   gap: 24px;
-  padding: 18px 24px;
+
+  padding: 16px 24px;
 
   z-index: 9999;
 
-background: rgba(15,16,32,0.65);
+  background: rgba(15,16,32,0.55);
 
   backdrop-filter: blur(10px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
 
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.15);
 }
 
-body {
-  padding-top: 80px;
+.top-links a {
+  color: #f5f7ff;
+
+  font-weight: 500;
+
+  font-size: 0.95rem;
+
+  transition:
+    opacity 0.2s ease;
 }
+
+.top-links a:hover {
+  opacity: 0.7;
+}
+
 /* =========================================
    TYPOGRAPHY
 ========================================= */
@@ -136,26 +154,30 @@ h2,
 h3,
 h4 {
   margin-top: 0;
+
   letter-spacing: -0.03em;
 }
 
 h1 {
-  
-  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
 
-  line-height: 1.05;
+  line-height: 1.1;
 
   font-weight: 800;
+
+  max-width: 900px;
+
+  margin: 0 auto;
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 
   margin-bottom: 18px;
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 p {
@@ -179,7 +201,7 @@ a {
 ========================================= */
 
 section {
-  padding: 90px 24px;
+  padding: 65px 24px;
 }
 
 .container {
@@ -195,9 +217,10 @@ section {
 ========================================= */
 
 .hero {
-  padding: 110px 24px 70px;
+  padding: 90px 24px 50px;
 
   text-align: center;
+
   position: relative;
 }
 
@@ -237,19 +260,19 @@ section {
       #93c5fd
     );
 
- background-clip: text;
--webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
 
-color: transparent;
--webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
   max-width: 700px;
 
-  margin: 28px auto 0;
+  margin: 22px auto 0;
 
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .tagline {
@@ -257,7 +280,7 @@ color: transparent;
 }
 
 .hero-buttons {
-  margin-top: 42px;
+  margin-top: 36px;
 
   display: flex;
   justify-content: center;
@@ -360,8 +383,7 @@ color: transparent;
   gap: 20px;
 
   position: relative;
-
-  }
+}
 
 .project-card::before {
   content: "";
@@ -604,11 +626,11 @@ footer {
 @media (max-width: 768px) {
 
   section {
-    padding: 72px 20px;
+    padding: 50px 20px;
   }
 
   .hero {
-    padding: 180px 20px 90px;
+    padding: 110px 20px 60px;
   }
 
   .hero-buttons {
@@ -626,7 +648,7 @@ footer {
   }
 
   h1 {
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .top-links {

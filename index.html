@@ -16,9 +16,19 @@
    <!-- HEADER -->
   <div id="header"></div>
 
+  <!-- Feature Project-->
+   <section class="projects">
+    <h2>Feature Projects</h2>
+
+    <div class="project-links">
+      <a href="dashboard.html">🛠️ See it Live</a>
+    </div>
+    
+   </section>
+
   <!-- PROJECTS -->
   <section class="projects">
-    <h2>🐾 Featured Project</h2>
+    <h2>🐾 Projects</h2>
 
 <div class="projects-container" id ="projects">
   
@@ -244,16 +254,15 @@
 
 
   <script>
-
    //Load Header
-    fetch('header.html')
+    fetch('components/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
       });
 
     //Load Footer
-    fetch('footer.html')
+    fetch('components/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;

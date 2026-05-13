@@ -2,37 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sophie | Cloud Engineer ☁️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie | Cloud Engineer ☁️</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css?v=2">
-
-     
 </head>
 
 <body>
- <div class="top-links">
-      <a href="https://sophieworld.dev">🏠Home</a>
-      <a href="#projects">💻 Projects</a>
-      <a href="https://github.com/User10538">🐙 GitHub</a>
-      <a href="#contact">📬 Contact Me</a>
-    </div>
-  <!-- HERO -->
-  <header class="hero">
-     
-    <h1>
-      Building secure cloud-native systems that are simple, reliable & fun ☁️
-    </h1>
-    <p class="tagline">
-      Cloud Engineer & Security-Focused Backend Developer ✨
-    </p>
-
-      </header>
-
+   <!-- HEADER -->
+  <div id="header"></div>
 
   <!-- PROJECTS -->
   <section class="projects">
@@ -227,11 +209,8 @@
   <h2>⚙️ My Approach</h2>
 
   <p>
-    I enjoy building systems that are secure,
-    reliable, and easy to maintain.
-    I’m especially interested in cloud automation,
-    backend architecture, and learning how real-world
-    systems scale ☁️
+  I enjoy understanding how systems work behind the scenes and building cloud 
+  infrastructure that’s secure, reliable, and easy to maintain ☁️
   </p>
 
 </section>
@@ -261,12 +240,26 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>Powered by AWS, automation, and curiosity ☁️</p>
-  </footer>
+  <div id="footer"></div>
 
-  <!-- SCROLL ANIMATION -->
+
   <script>
+
+   //Load Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    //Load Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+    //SCROLL ANIMATION
     const elements = document.querySelectorAll("section");
 
     const observer = new IntersectionObserver(entries => {
@@ -281,7 +274,8 @@
       el.classList.add("fade-in");
       observer.observe(el);
     });
+
   </script>
 
-</body>
+  </body>
 </html>

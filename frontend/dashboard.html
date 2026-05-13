@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-    <title>Sophie | Cloud Engineer ☁️</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sophie | Security Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -13,46 +14,66 @@
 </head>
 
 <body>
-   <!-- HEADER -->
+
+  <!-- HEADER -->
   <div id="header"></div>
-</body>
+
+  <main style="padding: 2rem;">
+
+    <h1>Security Dashboard</h1>
+
+    <button onclick="loadEvents()">Load Events</button>
+
+    <ul id="events"></ul>
+
+  </main>
 
   <!-- FOOTER -->
   <div id="footer"></div>
 
-
   <script>
-   //Load Header
+
+    // Load security events
+    async function loadEvents() {
+
+      const res = await fetch(
+        "https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/security-events"
+      );
+
+      const data = await res.json();
+
+      const list = document.getElementById("events");
+
+      list.innerHTML = "";
+
+      data.forEach(event => {
+
+        const li = document.createElement("li");
+
+        li.innerText =
+          `${event.timestamp} | ${event.ip} | ${event.userAgent}`;
+
+        list.appendChild(li);
+
+      });
+    }
+
+    // Load Header
     fetch('/components/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
       });
 
-    //Load Footer
+    // Load Footer
     fetch('/components/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
       });
 
-    //SCROLL ANIMATION
-    const elements = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    elements.forEach(el => {
-      el.classList.add("fade-in");
-      observer.observe(el);
-    });
-
   </script>
 
-  </body>
+</body>
+
 </html>

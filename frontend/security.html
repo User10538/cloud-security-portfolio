@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Security Dashboard</title>
+</head>
+<body>
+
+<h1>Security Dashboard</h1>
+
+<ul id="events"></ul>
+
+<script>
+
+async function logSecurityEvent() {
+
+  await fetch("https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/security-log", {
+    method: "POST"
+  });
+
+}
+
+logSecurityEvent();
+
+</script>
+
+</body>
+</html>

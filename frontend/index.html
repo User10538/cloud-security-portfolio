@@ -2,223 +2,372 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <title>Sophie | Cloud Engineer ☁️</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sophie | Cloud & Security Engineer</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta 
+    name="description" 
+    content="Cloud & Security Engineer specializing in AWS serverless infrastructure, cloud security, Terraform, CI/CD, and secure API architecture."
+  >
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body>
-   <!-- HEADER -->
+
+  <!-- HEADER -->
   <div id="header"></div>
 
-    <!-- ABOUT -->
-       <section class="about">
-      <h2>About Me</h2>
-      <div id="contact">
-        <p>Cloud & Security Engineer focused on AWS serverless infrastructure, secure API design, and cloud-native monitoring systems.</p>    
-  </div>
-    <a class="cta" href="contact.html">
-      Contact Me
-    </a>
-  </section>
-  </section>
+  <!-- HERO -->
+  <section class="hero">
 
-  <!-- Feature Project-->
-<section class="featureProject-preview">
-   <h2>Featured Security Platforms</h2>
-   <div class="featureProject-card">  
-    
-    <h3>AWS Serverless Security Monitoring Dashboard</h3>    
-    <p>Designed and deployed a serverless security monitoring platform on AWS using API Gateway, Lambda, and DynamoDB to collect and visualize security telemetry in real time. Implemented event-driven ingestion pipelines, IAM least-privilege access controls, 
-      and CloudFront-based HTTPS delivery to support a lightweight SOC-style monitoring architecture.</p>
+    <div class="hero-content">
 
-    <div class="tags">
-      <span>Technologies: AWS Lambda • API Gateway • DynamoDB • Amazon S3 • CloudFront • IAM • Cloudflare • Python • JavaScript • 
-        Serverless Security • Cloud Security</span>
-    </div>
-    <div class="featureProject-tags">
-      <p>
-      <div class="project-links"><a href="dashboard.html">🛠️ See it Live</a></div>
-    </p>
-      <p>
-        <div class="project-links"><a href="https://sophieworld.atlassian.net/wiki/external/ZjQxOGUxNjUxZmYxNDgyODhkMDFlZTg1Y2MzZWFhYjQ">🛠️ Technical Deep Dive</a></div>        
+      <p class="hero-subtitle">Cloud & Security Engineer</p>
+
+      <h1>
+        Building secure, scalable AWS infrastructure 
+        with automation and serverless architecture.
+      </h1>
+
+      <p class="hero-description">
+        Focused on cloud security, serverless systems, identity management,
+        CI/CD automation, and production-style AWS architecture.
       </p>
-     </div>
+
+      <div class="hero-tags">
+        <span>AWS</span>
+        <span>Terraform</span>
+        <span>Serverless</span>
+        <span>Cloud Security</span>
+        <span>CI/CD</span>
+        <span>IAM</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a class="cta-primary" href="#projects">View Projects</a>
+        <a class="cta-secondary" href="contact.html">Contact</a>
+      </div>
+
     </div>
-</section>
-
-
-  <!-- PROJECTS -->
-  <section class="projects">
-    <h2>Projects</h2>
-
-<div class="projects-container" id ="projects">
-  
-
-  <div class="project-card">
-    <h3>AWS Static Website & CI/CD Pipeline</h3>
-
-    <p>Designed and deployed a static web platform on AWS using S3 and CloudFront, with automated CI/CD workflows through 
-      GitHub Actions. Implemented HTTPS, custom domain integration via Cloudflare, and infrastructure automation using Terraform.</p>
-
-    <div class="tags">
-      <span>Technologies: AWS • GitHub Actions • CloudFront • Cloudflare • Terraform</span>
-    </div>
-       <div class="project-links">
-      <a href="https://sophieworld.atlassian.net/wiki/external/MWVhOWRiZjI1ZjM0NDRkMzgyNjg4NWQwNWUxMjgwNTY">🛠️ Technical Deep Dive</a>
-    </div>
-  </div>
-
-
-  <div class="project-card">
-    <h3>Secure AWS Static Website Architecture</h3>
-
-    <p>Implemented a hardened static website architecture using private Amazon S3, CloudFront Origin Access Control (OAC), and AWS WAF. 
-      Applied edge-layer protections including rate limiting and managed rule sets to reduce origin exposure and mitigate common web threats.
-    </p>
-
-    <div class="tags">
-      <span>Technologies: AWS WAF • CloudFront • Amazon S3 • OAC • Security Hardening</span>
-    </div>
-       <div class="project-links">
-      <a href="https://sophieworld.atlassian.net/wiki/external/M2U2MmE0ZGE2YWQ1NDhlZmI2MGJiOGY1M2U3ODUxMGE">🛠️ Technical Deep Dive</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <h3>Serverless Contact Form API</h3>
-
-    <p>Developed a secure serverless contact form platform using API Gateway, AWS Lambda, and Amazon SES for scalable email delivery. 
-      Implemented CORS handling, input validation, and CloudFront integration to support secure frontend-to-API communication and 
-      low-latency global access. </p>
-
-    <div class="tags">
-      <span>Technologies: AWS Lambda • API Gateway • Amazon SES • CloudFront • Python • Serverless Architecture</span>
-    </div>
-    <div class="project-links">
-      <a href="https://sophieworld.atlassian.net/wiki/external/YTQ1YmYyOWI2MWUzNGM2OGJiYjJjZmY1Y2RmMjhlNWE">🛠️ Technical Deep Dive</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <h3>Secure Serverless Backend API</h3>
-
-    <p>Designed and secured a serverless backend API using Amazon Cognito and API Gateway JWT authorization to enforce authenticated access across protected routes. Implemented token validation prior to 
-      Lambda execution and integrated Amazon SES for secure server-side email processing within a hardened AWS serverless architecture.</p>
-
-    <div class="tags">
-      <span>Technologies: Amazon Cognito • API Gateway • AWS Lambda • JWT • OAuth 2.0 • Amazon SES • CloudFront • Serverless Security • AWS Cloud Security</span>
-    </div>
-    <div class="project-links">
-      <a href="https://sophieworld.atlassian.net/wiki/external/ZDk4ODVmYTkwNTE2NDFkZTk5OGEwMDhiNWNiNjA1MjU">🛠️ Technical Deep Dive</a>
-    </div>
-  </div>
-   </div>
-</div>
-
-</div>
 
   </section>
 
-<section class="architecture-preview">
+  <!-- ABOUT -->
+  <section class="about">
 
-  <div class="architecture-card">
-
-    <h2>Cloud Architecture</h2>
+    <h2>About Me</h2>
 
     <p>
-      My projects focus on secure cloud-native architecture,
-      automation, and scalable serverless systems.
+      I'm a cloud-focused engineer passionate about building secure and scalable
+      AWS infrastructure using modern serverless and Infrastructure as Code practices.
     </p>
 
-    <div class="architecture-tags">
-      <span> AWS Lambda • CloudFront • Cognito JWT Auth • S3 • AWS WAF • API Gateway</span>
+    <p>
+      My projects focus on:
+    </p>
+
+    <ul class="about-list">
+      <li>Secure API architecture</li>
+      <li>Serverless AWS platforms</li>
+      <li>CI/CD automation</li>
+      <li>Cloud security hardening</li>
+      <li>Identity & access management</li>
+      <li>Infrastructure automation with Terraform</li>
+    </ul>
+
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="featured-project">
+
+    <h2>Featured Security Platform</h2>
+
+    <div class="featured-card">
+
+      <h3>AWS Serverless Security Monitoring Dashboard</h3>
+
+      <p>
+        Designed and deployed a serverless AWS security monitoring platform
+        to collect, process, and visualize cloud telemetry in real time.
+      </p>
+
+      <p>
+        Implemented event-driven ingestion pipelines, IAM least-privilege access controls,
+        CloudFront HTTPS delivery, and lightweight SOC-style monitoring workflows
+        using fully serverless architecture.
+      </p>
+
+      <div class="project-highlights">
+
+        <div class="highlight">
+          <strong>Architecture</strong>
+          <span>API Gateway • Lambda • DynamoDB • S3 • CloudFront</span>
+        </div>
+
+        <div class="highlight">
+          <strong>Security</strong>
+          <span>IAM Hardening • HTTPS Delivery • Access Control</span>
+        </div>
+
+        <div class="highlight">
+          <strong>Focus Areas</strong>
+          <span>Cloud Security • Monitoring • Serverless Design</span>
+        </div>
+
+      </div>
+
+      <div class="project-links">
+        <a href="dashboard.html">Live Demo</a>
+
+        <a href="https://sophieworld.atlassian.net/wiki/external/ZjQxOGUxNjUxZmYxNDgyODhkMDFlZTg1Y2MzZWFhYjQ">
+          Technical Deep Dive
+        </a>
+      </div>
+
     </div>
-  </div>
 
-</section>
-<!-- 
-  ARCHITECTURE
-  <section class="architecture">
-    <h2>☁️ How It Works</h2>
+  </section>
 
-      <p class="arch-desc">
-      This project uses a simple but powerful cloud architecture:
-    </p>
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
 
-    <div class="diagram">
-      <div>User 🌍</div>
-      <div>↓</div>
-      <div>Cloudflare 🌐</div>
-      <div>↓</div>
-      <div>CloudFront ⚡</div>
-      <div>↓</div>
-      <div>S3 Bucket 📦</div>
+    <h2>Featured Projects</h2>
+
+    <div class="projects-container">
+
+      <!-- Project -->
+      <div class="project-card">
+
+        <h3>AWS Static Website & CI/CD Pipeline</h3>
+
+        <p>
+          Designed and deployed a cloud-native static web platform using Amazon S3,
+          CloudFront, and GitHub Actions CI/CD workflows.
+        </p>
+
+        <p>
+          Automated infrastructure deployment with Terraform while implementing
+          HTTPS delivery, DNS integration, and scalable global content distribution.
+        </p>
+
+        <div class="tags">
+          <span>AWS</span>
+          <span>Terraform</span>
+          <span>GitHub Actions</span>
+          <span>CloudFront</span>
+          <span>Cloudflare</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://sophieworld.atlassian.net/wiki/external/MWVhOWRiZjI1ZjM0NDRkMzgyNjg4NWQwNWUxMjgwNTY">
+            Technical Deep Dive
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Project -->
+      <div class="project-card">
+
+        <h3>Secure AWS Static Website Architecture</h3>
+
+        <p>
+          Implemented a hardened AWS static website architecture using private S3,
+          CloudFront Origin Access Control (OAC), and AWS WAF protections.
+        </p>
+
+        <p>
+          Applied managed rule sets, edge-layer filtering, and rate limiting
+          to reduce origin exposure and mitigate common web attack vectors.
+        </p>
+
+        <div class="tags">
+          <span>AWS WAF</span>
+          <span>CloudFront</span>
+          <span>Amazon S3</span>
+          <span>Security Hardening</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://sophieworld.atlassian.net/wiki/external/M2U2MmE0ZGE2YWQ1NDhlZmI2MGJiOGY1M2U3ODUxMGE">
+            Technical Deep Dive
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Project -->
+      <div class="project-card">
+
+        <h3>Serverless Contact Form API</h3>
+
+        <p>
+          Developed a secure serverless API platform using API Gateway,
+          AWS Lambda, and Amazon SES for scalable email processing.
+        </p>
+
+        <p>
+          Implemented CORS policies, request validation, and CloudFront integration
+          to support secure frontend-to-API communication with low-latency delivery.
+        </p>
+
+        <div class="tags">
+          <span>AWS Lambda</span>
+          <span>API Gateway</span>
+          <span>Amazon SES</span>
+          <span>Serverless</span>
+          <span>Python</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://sophieworld.atlassian.net/wiki/external/YTQ1YmYyOWI2MWUzNGM2OGJiYjJjZmY1Y2RmMjhlNWE">
+            Technical Deep Dive
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Project -->
+      <div class="project-card">
+
+        <h3>Secure Serverless Backend API</h3>
+
+        <p>
+          Designed and secured a protected backend API using Amazon Cognito,
+          JWT authorization, and API Gateway route protection.
+        </p>
+
+        <p>
+          Implemented authenticated access flows, token validation,
+          and secure server-side email processing within a hardened
+          AWS serverless architecture.
+        </p>
+
+        <div class="tags">
+          <span>Amazon Cognito</span>
+          <span>JWT</span>
+          <span>OAuth 2.0</span>
+          <span>AWS Lambda</span>
+          <span>Serverless Security</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://sophieworld.atlassian.net/wiki/external/ZDk4ODVmYTkwNTE2NDFkZTk5OGEwMDhiNWNiNjA1MjU">
+            Technical Deep Dive
+          </a>
+        </div>
+
+      </div>
+
     </div>
 
-<p class="arch-desc">
-      Designed and deployed a secure cloud architecture using AWS S3, CloudFront, and AWS WAF. 
-      Implemented Origin Access Control, managed security rules, and rate limiting to prevent unauthorized access and mitigate common web threats.
-    </p>
-  <div class="diagram">
-    <div>🌍 User</div>
-    <div>↓</div>
-    <div>🌐 Cloudflare</div>
-    <div>↓</div>
-    <div>🛡️ AWS WAF</div>
-    <div>↓</div>
-    <div>⚡ CloudFront</div>
-    <div>↓</div>
-    <div>📦 S3 (Private)</div>
-  </div>
-    
-  </section> -->
-<!-- Certificates -->
-<section class="skills-section">
-  <h2>Certificates</h2>
-  <div class="cert-grid">
-    <div class="cert-card">AWS Certified Cloud Practitioner</div>
-    <div class="cert-card">Microsoft Security, Compliance & Identity Fundamentals</div>
-    <div class="cert-card">Microsoft Azure Data Fundamentals</div>
-    <div class="cert-card">Microsoft Azure Fundamentals</div>
-    <div class="cert-card">Certificate IV Cyber Security</div>
-  </div>
-</section>
-  
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section">
+
+    <h2>Core Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">AWS Cloud Architecture</div>
+      <div class="skill-card">Serverless Infrastructure</div>
+      <div class="skill-card">Cloud Security</div>
+      <div class="skill-card">Infrastructure as Code</div>
+      <div class="skill-card">Terraform Automation</div>
+      <div class="skill-card">CI/CD Pipelines</div>
+      <div class="skill-card">Identity & Access Management</div>
+      <div class="skill-card">API Security</div>
+
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certifications">
+
+    <h2>Certifications</h2>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">AWS Certified Cloud Practitioner</div>
+
+      <div class="cert-card">
+        Microsoft Security, Compliance & Identity Fundamentals
+      </div>
+
+      <div class="cert-card">
+        Microsoft Azure Fundamentals
+      </div>
+
+      <div class="cert-card">
+        Microsoft Azure Data Fundamentals
+      </div>
+
+      <div class="cert-card">
+        Certificate IV Cyber Security
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CURRENTLY LEARNING -->
+  <section class="learning">
+
+    <h2>Currently Exploring</h2>
+
+    <div class="learning-tags">
+      <span>Kubernetes</span>
+      <span>Amazon EKS</span>
+      <span>Advanced IAM</span>
+      <span>Cloud Threat Detection</span>
+      <span>Observability</span>
+      <span>Security Monitoring</span>
+    </div>
+
+  </section>
+
   <!-- APPROACH -->
-<section class="approach">
-  <h2>My Approach</h2>
-  <p>Designing secure AWS infrastructure, identity systems, and deployment pipelines with a focus on reliability, 
-    automation, and least-privilege architecture.
-  </p>
-</section> 
+  <section class="approach">
 
+    <h2>Engineering Approach</h2>
+
+    <p>
+      I focus on building secure, maintainable, and production-style cloud systems
+      with an emphasis on automation, least-privilege security,
+      scalability, and operational reliability.
+    </p>
+
+  </section>
 
   <!-- FOOTER -->
   <div id="footer"></div>
 
-
   <script>
-   //Load Header
+
+    // Load Header
     fetch('/components/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
       });
 
-    //Load Footer
+    // Load Footer
     fetch('/components/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
       });
 
-    //SCROLL ANIMATION
+    // Scroll Animations
     const elements = document.querySelectorAll("section");
 
     const observer = new IntersectionObserver(entries => {
@@ -236,8 +385,8 @@
 
   </script>
 
-   <!-- Security Logging -->
+  <!-- Security Logging -->
   <script src="security.js"></script>
 
-  </body>
+</body>
 </html>

@@ -808,80 +808,134 @@ footer {
 /* =========================================
    ARCHITECTURE PREVIEW
 ========================================= */
-
-.architecture-preview {
-  max-width: 1100px;
+.architecture-flow {
+  max-width: 1200px;
 
   margin: 0 auto;
-}
-
-.architecture-card {
-  background:
-    rgba(255,255,255,0.05);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(14px);
-
-  border-radius: 24px;
-
-  padding: 34px;
 
   text-align: center;
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,0.2);
 }
 
-.architecture-card p {
-  margin:
-    0 auto 30px;
+.section-label {
+  color: #93c5fd;
 
-  max-width: 700px;
+  font-size: 0.75rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  margin-bottom: 12px;
 }
 
-.architecture-tags {
+.flow-container {
+  margin-top: 50px;
+
   display: flex;
 
-  flex-wrap: wrap;
+  align-items: center;
 
   justify-content: center;
 
-  gap: 14px;
+  flex-wrap: wrap;
+
+  gap: 18px;
 }
 
-.architecture-tags span {
+.flow-node {
+  min-width: 150px;
+
+  padding: 24px 18px;
+
+  border-radius: 20px;
+
   background:
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.04);
 
   border:
     1px solid rgba(255,255,255,0.08);
 
-  padding: 12px 18px;
+  backdrop-filter: blur(12px);
 
-  border-radius: 14px;
-
-  color: #dbe7ff;
-
-  font-weight: 500;
-
-  font-family:
-    'JetBrains Mono',
-    monospace;
+  position: relative;
 
   transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.architecture-tags span:hover {
-  transform: translateY(-3px);
+.flow-node:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(96,165,250,0.22);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.22),
+    0 0 22px rgba(96,165,250,0.08);
+}
+
+.flow-node span {
+  font-size: 1.8rem;
+
+  display: block;
+
+  margin-bottom: 14px;
+}
+
+.flow-node h3 {
+  margin: 0;
+
+  font-size: 1rem;
+}
+
+.flow-node p {
+  margin-top: 8px;
+
+  font-size: 0.88rem;
+
+  color: #94a3b8;
+}
+
+.flow-line {
+  width: 60px;
+
+  height: 2px;
 
   background:
-    rgba(255,255,255,0.08);
+    linear-gradient(
+      90deg,
+      rgba(96,165,250,0.18),
+      rgba(139,92,246,0.18)
+    );
+
+  position: relative;
 }
 
+.flow-line::after {
+  content: "";
+
+  position: absolute;
+
+  right: -6px;
+  top: -3px;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #60a5fa;
+
+  box-shadow:
+    0 0 12px rgba(96,165,250,0.6);
+}
+
+.secure {
+  border-color:
+    rgba(96,165,250,0.18);
+}
 
 
 /* =========================================

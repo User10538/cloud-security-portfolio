@@ -68,14 +68,35 @@
       data.forEach(event => {
 
         const li = document.createElement("li");
+events.forEach((event) => {
 
-        li.innerText =
-          `${event.timestamp}| ${event.userAgent}`; // | ${event.ip} 
+  const li = document.createElement("li");
 
-        list.appendChild(li);
+  let risk = "Low";
 
-      });
-    }
+  // Example simple checks
+  if (
+    event.userAgent.includes("bot") ||
+    event.userAgent.includes("crawler")
+  ) {
+    risk = "Medium";
+  }
+
+  if (
+    event.userAgent.includes("sqlmap") ||
+    event.userAgent.includes("curl") ||
+    event.userAgent.includes("python")
+  ) {
+    risk = "High";
+  }
+
+  li.innerText =
+    `${event.timestamp} | ${event.userAgent}|  ${event.ip}| Risk: ${risk}`;
+
+  list.appendChild(li);
+
+});
+    
 
     // Load Header
     fetch('/components/header.html')

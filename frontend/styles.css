@@ -222,44 +222,178 @@ section {
 /* =========================================
    TOP NAV
 ========================================= */
-
 .top-links {
   position: fixed;
-
   top: 0;
   left: 0;
   right: 0;
 
   display: flex;
-
   justify-content: center;
   align-items: center;
+  gap: 28px;
 
-  gap: 24px;
-
-  padding: 16px 24px;
+  padding: 18px 32px;
 
   z-index: 9999;
+  overflow: hidden;
 
+  /* Cyberpunk glass background */
   background:
-    rgba(15,16,32,0.55);
+    linear-gradient(
+      135deg,
+      rgba(8, 10, 25, 0.92),
+      rgba(20, 0, 40, 0.72)
+    );
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   border-bottom:
-    1px solid rgba(255,255,255,0.06);
+    1px solid rgba(0, 255, 255, 0.18);
+
+  /* Neon glow */
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.15),
+    0 0 30px rgba(255, 0, 255, 0.12),
+    0 8px 40px rgba(0, 0, 0, 0.55);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
 
+/* Hover pulse */
+.top-links:hover {
+  transform: translateY(2px);
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 45px rgba(255, 0, 255, 0.22),
+    0 10px 50px rgba(0, 0, 0, 0.65);
+}
+
+/* Animated neon scan line */
+.top-links::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 255, 255, 0.18),
+      rgba(255, 0, 255, 0.12),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  animation: cyber-scan 6s linear infinite;
+}
+
+/* Bottom neon strip */
+.top-links::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: 70%;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #00ffff,
+      #ff00ff,
+      #00ffff,
+      transparent
+    );
+
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #ff00ff;
+}
+
+/* Optional link styling */
 .top-links a {
-  color: white;
+  position: relative;
 
-  font-weight: 500;
+  color: #d8f8ff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.9rem;
 
-  transition: opacity 0.2s ease;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
+/* Neon hover effect */
 .top-links a:hover {
-  opacity: 0.7;
+  color: #ffffff;
+
+  text-shadow:
+    0 0 6px #00ffff,
+    0 0 12px #ff00ff,
+    0 0 22px #00ffff;
+
+  transform: translateY(-2px);
+}
+
+/* Tiny underline beam */
+.top-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00ffff,
+      #ff00ff
+    );
+
+  transition: width 0.3s ease;
+
+  box-shadow:
+    0 0 8px #00ffff,
+    0 0 14px #ff00ff;
+}
+
+.top-links a:hover::after {
+  width: 100%;
+}
+
+/* Scan animation */
+@keyframes cyber-scan {
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 140%;
+  }
 }
 
 /* =========================================

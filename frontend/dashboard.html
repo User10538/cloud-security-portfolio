@@ -53,29 +53,86 @@
   <script>
 
     // Load security events
-    async function loadEvents() {
+async function loadEvents() {
 
-      const res = await fetch(
-        "https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/security-events"
-      );
+  const res = await fetch(
+    "https://za4ajp5sa6.execute-api.us-east-1.amazonaws.com/security-events"
+  );
 
-      const data = await res.json();
+  const data = await res.json();
 
-      const list = document.getElementById("events");
+  const list = document.getElementById("events");
 
-      list.innerHTML = "";
+  list.innerHTML = "";
 
-      data.forEach(event => {
+  data.forEach(event => {
 
-        const li = document.createElement("li");
+    const li = document.createElement("li");
 
-        li.innerText =
-          `${event.timestamp}| ${event.userAgent}`; // | ${event.ip} 
+    // Normalize user agent
+    const ua = (event.userAgent || "").toLowerCase();
 
-        list.appendChild(li);
+    // Default risk
+    let risk = "Low";
+    let color = "#22c55e";
 
-      });
+    // Medium risk checks
+    if (
+      ua.includes("bot") ||
+      ua.includes("crawler") ||
+      ua.includes("spider")
+    ) {
+      risk = "Medium";
+      color = "#f59e0b";
     }
+
+    // High risk checks
+    if (
+      ua.includes("curl") ||
+      ua.includes("python") ||
+      ua.includes("sqlmap") ||
+      ua.includes("nikto") ||
+      ua.includes("nmap")
+    ) {
+      risk = "High";
+      color = "#ef4444";
+    }
+
+    // Style each event row
+    li.style.padding = "12px";
+    li.style.marginBottom = "10px";
+    li.style.borderRadius = "12px";
+    li.style.background = "rgba(15,23,42,0.7)";
+    li.style.border = "1px solid rgba(148,163,184,0.15)";
+    li.style.fontFamily = "monospace";
+    li.style.color = "#e2e8f0";
+
+    // Render HTML
+    li.innerHTML = `
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+
+        <span>
+          ${event.timestamp}
+        </span>
+
+        <span style="color:#38bdf8;">
+          ${event.userAgent}
+        </span>
+
+        <span style="
+          color:${color};
+          font-weight:bold;
+        ">
+          ${risk} Risk
+        </span>
+
+      </div>
+    `;
+
+    list.appendChild(li);
+
+  });
+}
 
     // Load Header
     fetch('/components/header.html')

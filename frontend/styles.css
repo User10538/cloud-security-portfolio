@@ -805,138 +805,67 @@ footer {
   }
 
 }
-/* =========================================
-   ARCHITECTURE PREVIEW
-========================================= */
-.architecture-flow {
-  max-width: 1200px;
 
-  margin: 0 auto;
+<section class="architecture-flow">
 
-  text-align: center;
-}
+  <div class="section-header">
 
-.section-label {
-  color: #93c5fd;
+    <p class="section-label">
+      SECURITY ARCHITECTURE
+    </p>
 
-  font-size: 0.75rem;
+    <h2>
+      Secure Serverless Infrastructure
+    </h2>
 
-  text-transform: uppercase;
+    <p class="architecture-description">
+      Cloud-native AWS architecture focused on edge security,
+      identity-aware access control, and scalable serverless delivery.
+    </p>
 
-  letter-spacing: 0.18em;
+  </div>
 
-  margin-bottom: 12px;
-}
+  <div class="flow-grid">
 
-.flow-container {
-  margin-top: 50px;
+    <div class="flow-node user-node">
+      <div class="node-icon">🌍</div>
+      <h3>User Request</h3>
+      <p>Client Traffic</p>
+    </div>
 
-  display: flex;
+    <div class="flow-node cloudfront-node">
+      <div class="node-icon">⚡</div>
+      <h3>CloudFront</h3>
+      <p>Edge Delivery</p>
+    </div>
 
-  align-items: center;
+    <div class="flow-node waf-node secure-node">
+      <div class="node-icon">🛡️</div>
+      <h3>AWS WAF</h3>
+      <p>Threat Protection</p>
+    </div>
 
-  justify-content: center;
+    <div class="flow-node gateway-node">
+      <div class="node-icon">🔐</div>
+      <h3>API Gateway</h3>
+      <p>JWT Authorization</p>
+    </div>
 
-  flex-wrap: wrap;
+    <div class="flow-node lambda-node">
+      <div class="node-icon">☁️</div>
+      <h3>AWS Lambda</h3>
+      <p>Serverless Logic</p>
+    </div>
 
-  gap: 18px;
-}
+    <div class="flow-node dynamo-node">
+      <div class="node-icon">🗄️</div>
+      <h3>DynamoDB</h3>
+      <p>Cloud Storage</p>
+    </div>
 
-.flow-node {
-  min-width: 150px;
+  </div>
 
-  padding: 24px 18px;
-
-  border-radius: 20px;
-
-  background:
-    rgba(255,255,255,0.04);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(12px);
-
-  position: relative;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.flow-node:hover {
-  transform: translateY(-6px);
-
-  border-color:
-    rgba(96,165,250,0.22);
-
-  box-shadow:
-    0 12px 35px rgba(0,0,0,0.22),
-    0 0 22px rgba(96,165,250,0.08);
-}
-
-.flow-node span {
-  font-size: 1.8rem;
-
-  display: block;
-
-  margin-bottom: 14px;
-}
-
-.flow-node h3 {
-  margin: 0;
-
-  font-size: 1rem;
-}
-
-.flow-node p {
-  margin-top: 8px;
-
-  font-size: 0.88rem;
-
-  color: #94a3b8;
-}
-
-.flow-line {
-  width: 60px;
-
-  height: 2px;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(96,165,250,0.18),
-      rgba(139,92,246,0.18)
-    );
-
-  position: relative;
-}
-
-.flow-line::after {
-  content: "";
-
-  position: absolute;
-
-  right: -6px;
-  top: -3px;
-
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-
-  background: #60a5fa;
-
-  box-shadow:
-    0 0 12px rgba(96,165,250,0.6);
-}
-
-.secure {
-  border-color:
-    rgba(96,165,250,0.18);
-}
-
+</section>
 
 /* =========================================
    FEATURE PROJECT

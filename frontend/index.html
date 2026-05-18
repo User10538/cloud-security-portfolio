@@ -161,56 +161,47 @@
       Secure Serverless Infrastructure
     </h2>
 
-    <p>
+    <p class="architecture-description">
       Cloud-native AWS architecture focused on edge security,
       identity-aware access control, and scalable serverless delivery.
     </p>
 
   </div>
 
-  <div class="flow-container">
+  <div class="flow-grid">
 
-    <div class="flow-node">
-      <span>🌍</span>
+    <div class="flow-node user-node">
+      <div class="node-icon">🌍</div>
       <h3>User Request</h3>
+      <p>Client Traffic</p>
     </div>
 
-    <div class="flow-line"></div>
-
-    <div class="flow-node">
-      <span>⚡</span>
+    <div class="flow-node cloudfront-node">
+      <div class="node-icon">⚡</div>
       <h3>CloudFront</h3>
       <p>Edge Delivery</p>
     </div>
 
-    <div class="flow-line"></div>
-
-    <div class="flow-node secure">
-      <span>🛡️</span>
+    <div class="flow-node waf-node secure-node">
+      <div class="node-icon">🛡️</div>
       <h3>AWS WAF</h3>
       <p>Threat Protection</p>
     </div>
 
-    <div class="flow-line"></div>
-
-    <div class="flow-node">
-      <span>🔐</span>
+    <div class="flow-node gateway-node">
+      <div class="node-icon">🔐</div>
       <h3>API Gateway</h3>
       <p>JWT Authorization</p>
     </div>
 
-    <div class="flow-line"></div>
-
-    <div class="flow-node">
-      <span>☁️</span>
+    <div class="flow-node lambda-node">
+      <div class="node-icon">☁️</div>
       <h3>AWS Lambda</h3>
       <p>Serverless Logic</p>
     </div>
 
-    <div class="flow-line"></div>
-
-    <div class="flow-node">
-      <span>🗄️</span>
+    <div class="flow-node dynamo-node">
+      <div class="node-icon">🗄️</div>
       <h3>DynamoDB</h3>
       <p>Cloud Storage</p>
     </div>
@@ -218,8 +209,6 @@
   </div>
 
 </section>
-
-
 
 <!-- Certificates -->
 <section class="certifications">

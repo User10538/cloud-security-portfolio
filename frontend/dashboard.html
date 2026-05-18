@@ -67,6 +67,10 @@
 
       data.forEach(event => {
 
+      list.innerHTML = "";
+
+      data.forEach(event => {
+
         const li = document.createElement("li");
 events.forEach((event) => {
 
@@ -96,7 +100,7 @@ events.forEach((event) => {
   list.appendChild(li);
 
 });
-    
+    }
 
     // Load Header
     fetch('/components/header.html')

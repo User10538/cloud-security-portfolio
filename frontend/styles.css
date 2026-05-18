@@ -1,17 +1,186 @@
 /* =========================================
-   DESIGN SYSTEM
+   MODERN CLOUD PORTFOLIO
+   SECOND STYLESHEET VISUALS
+   + FIRST STYLESHEET ARCHITECTURE
+========================================= */
+
+/* =========================================
+   DESIGN TOKENS
+========================================= */
+
+:root {
+  --bg: #0f1020;
+
+  --surface: rgba(255,255,255,0.04);
+  --surface-strong: rgba(255,255,255,0.08);
+
+  --text: #f5f7ff;
+  --muted: #b6bdd1;
+
+  --accent: #8b5cf6;
+  --accent-2: #60a5fa;
+
+  --border: rgba(255,255,255,0.08);
+
+  --shadow:
+    0 10px 40px rgba(0,0,0,0.25);
+
+  --shadow-hover:
+    0 18px 45px rgba(0,0,0,0.24),
+    0 0 24px rgba(96,165,250,0.08);
+
+  --radius: 24px;
+
+  --max-width: 1200px;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(139,92,246,0.15),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(96,165,250,0.12),
+      transparent 30%
+    ),
+
+    var(--bg);
+
+  line-height: 1.7;
+
+  overflow-x: hidden;
+
+  position: relative;
+
+  padding-top: 70px;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* subtle noise */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 4px 4px;
+
+  opacity: 0.15;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  color: var(--muted);
+
+  max-width: 70ch;
+}
+
+a {
+  text-decoration: none;
+}
+
+.highlight {
+  color: var(--accent-2);
+}
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+section {
+  padding: 70px 24px;
+}
+
+.container {
+  width: 100%;
+
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   GLASS SYSTEM
 ========================================= */
 
 .glass-card {
   background:
-    rgba(255,255,255,0.04);
+    var(--surface);
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid var(--border);
 
   backdrop-filter: blur(14px);
 
-  border-radius: 24px;
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
 
   position: relative;
 
@@ -47,16 +216,117 @@
     rgba(96,165,250,0.22);
 
   box-shadow:
-    0 18px 45px rgba(0,0,0,0.24),
-    0 0 24px rgba(96,165,250,0.08);
+    var(--shadow-hover);
 }
 
 /* =========================================
-   HERO STACK
+   TOP NAV
 ========================================= */
 
-.hero-stack {
-  margin-top: 28px;
+.top-links {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 16px 24px;
+
+  z-index: 9999;
+
+  background:
+    rgba(15,16,32,0.55);
+
+  backdrop-filter: blur(10px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.top-links a {
+  color: white;
+
+  font-weight: 500;
+
+  transition: opacity 0.2s ease;
+}
+
+.top-links a:hover {
+  opacity: 0.7;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  text-align: center;
+
+  padding:
+    90px 24px 60px;
+
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(139,92,246,0.15),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+}
+
+.hero h1 {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #d8b4fe,
+      #93c5fd
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin:
+    22px auto 0;
+
+  font-size: 1.05rem;
+}
+
+.hero-buttons {
+  margin-top: 36px;
 
   display: flex;
 
@@ -64,54 +334,81 @@
 
   flex-wrap: wrap;
 
-  gap: 12px;
+  gap: 16px;
 }
 
-.hero-stack span {
-  padding: 10px 16px;
+/* =========================================
+   BUTTONS
+========================================= */
 
-  border-radius: 999px;
+.button {
+  display: inline-flex;
 
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 22px;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.button-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent-2)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(139,92,246,0.25);
+}
+
+.button-primary:hover {
+  transform: translateY(-3px);
+}
+
+.button-secondary {
   background:
     rgba(255,255,255,0.04);
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid var(--border);
 
-  color: #dbe7ff;
-
-  font-size: 0.85rem;
-
-  font-weight: 500;
+  color: var(--text);
 
   backdrop-filter: blur(10px);
-
-  transition:
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
-.hero-stack span:hover {
-  transform: translateY(-2px);
-
-  border-color:
-    rgba(96,165,250,0.20);
-
-  box-shadow:
-    0 0 18px rgba(96,165,250,0.08);
+.button-secondary:hover {
+  background:
+    rgba(255,255,255,0.08);
 }
 
 /* =========================================
-   PROJECT LABELS
+   SECTION SYSTEM
 ========================================= */
 
-.project-label {
+.section-header {
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+.section-label {
   color: #93c5fd;
 
-  font-size: 0.72rem;
+  font-size: 0.75rem;
 
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 
   text-transform: uppercase;
 
@@ -121,8 +418,17 @@
 }
 
 /* =========================================
-   PROJECT CARDS
+   PROJECTS
 ========================================= */
+
+.projects-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 28px;
+}
 
 .project-card {
   padding: 32px;
@@ -142,6 +448,76 @@
 
 .project-card p {
   margin: 0;
+}
+
+/* reusable application */
+
+.project-card,
+.featureProject-card,
+.flow-node,
+.cert-badge,
+.contact-panel {
+  position: relative;
+}
+
+.project-card,
+.featureProject-card,
+.flow-node,
+.cert-badge,
+.contact-panel {
+  background:
+    var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card::before,
+.featureProject-card::before,
+.flow-node::before,
+.cert-badge::before,
+.contact-panel::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.05),
+      transparent 24%
+    );
+
+  pointer-events: none;
+}
+
+.project-card:hover,
+.featureProject-card:hover,
+.flow-node:hover,
+.cert-badge:hover,
+.contact-panel:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(96,165,250,0.22);
+
+  box-shadow:
+    var(--shadow-hover);
 }
 
 /* =========================================
@@ -261,34 +637,6 @@
   text-align: center;
 }
 
-.section-header {
-  margin-bottom: 70px;
-}
-
-.section-label {
-  color: #93c5fd;
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  margin-bottom: 14px;
-}
-
-.architecture-description {
-  max-width: 760px;
-
-  margin: 0 auto;
-
-  font-size: 1.05rem;
-}
-
-/* =========================================
-   FLOW GRID
-========================================= */
-
 .flow-grid {
   position: relative;
 
@@ -306,9 +654,7 @@
   align-items: center;
 }
 
-/* =========================================
-   GRID AREAS
-========================================= */
+/* areas */
 
 .user-node {
   grid-area: user;
@@ -334,13 +680,9 @@
   grid-area: dynamo;
 }
 
-/* =========================================
-   FLOW NODES
-========================================= */
+/* nodes */
 
 .flow-node {
-  position: relative;
-
   min-height: 210px;
 
   padding: 28px 18px;
@@ -368,9 +710,7 @@
   color: #94a3b8;
 }
 
-/* =========================================
-   CONNECTORS
-========================================= */
+/* connectors */
 
 .user-node::after,
 .cloudfront-node::after,
@@ -394,9 +734,7 @@
     );
 }
 
-/* =========================================
-   VERTICAL BRANCH
-========================================= */
+/* vertical branch */
 
 .branch-line {
   position: absolute;
@@ -416,10 +754,11 @@
 }
 
 /* =========================================
-   NODE ICONS
+   ICONS
 ========================================= */
 
-.node-icon {
+.node-icon,
+.cert-icon {
   width: 64px;
   height: 64px;
 
@@ -443,13 +782,12 @@
     0 0 18px rgba(96,165,250,0.06);
 }
 
-.node-icon svg {
+.node-icon svg,
+.cert-icon svg {
   width: 28px;
   height: 28px;
 
   color: #dbe7ff;
-
-  stroke-width: 2;
 }
 
 /* =========================================
@@ -478,32 +816,6 @@
   padding: 22px;
 }
 
-.cert-icon {
-  width: 52px;
-  height: 52px;
-
-  border-radius: 14px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139,92,246,0.18),
-      rgba(96,165,250,0.16)
-    );
-}
-
-.cert-icon svg {
-  width: 24px;
-  height: 24px;
-
-  color: #dbe7ff;
-}
-
 .cert-badge h3 {
   margin: 0;
 
@@ -518,16 +830,115 @@
   color: #94a3b8;
 }
 
-.featured-cert {
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-layout {
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.8fr;
+
+  gap: 28px;
+}
+
+.contact-panel {
+  padding: 28px;
+}
+
+.contact-main form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.contact-main input,
+.contact-main textarea {
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color: white;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  backdrop-filter: blur(10px);
+}
+
+.contact-main textarea {
+  min-height: 180px;
+
+  resize: vertical;
+}
+
+.contact-main input:focus,
+.contact-main textarea:focus {
   border-color:
-    rgba(96,165,250,0.18);
+    rgba(139,92,246,0.5);
+
+  box-shadow:
+    0 0 0 4px rgba(139,92,246,0.15);
 }
 
 /* =========================================
-   MOBILE
+   FOOTER
+========================================= */
+
+footer {
+  padding: 40px 24px;
+
+  color: #8e97aa;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.fade-in {
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 1100px) {
+
+  .projects-container {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
 
   .flow-grid {
     grid-template-columns: 1fr;
@@ -551,7 +962,61 @@
     display: none;
   }
 
-  .flow-node {
-    min-height: auto;
+  .contact-layout {
+    grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 50px 20px;
+  }
+
+  .hero {
+    padding: 110px 20px 60px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .featureProject-card,
+  .contact-panel {
+    padding: 24px;
+  }
+
+  .top-links {
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    padding: 14px;
+  }
+
+  h1 {
+    line-height: 1.1;
+  }
+}
+
+
+/* =========================================
+   LEFT-ALIGNED SECTION HEADERS
+========================================= */
+
+.section-header {
+  text-align: left;
+}
+
+.section-header h2,
+.section-header .section-label,
+.section-header p {
+  margin-left: 0;
 }

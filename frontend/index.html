@@ -31,8 +31,11 @@
 
     <div class="about-content" id="contact">
 
-      <p>Most of my work involves serverless systems, Infrastructure as Code, and making cloud deployments safer 
-        and easier to manage.</p>
+      <p>
+        I build AWS projects around the parts that usually cause trouble later:
+        access control, deployment repeatability, logging, and keeping public
+        endpoints as small as possible.
+      </p>
       <div class="tags">
       <span>AWS • Terraform • IAM • Serverless • CI/CD • API Security</span>
     </div>
@@ -71,9 +74,9 @@
       <h2>AWS Security Monitoring Dashboard</h2>
 
       <p>
-        AWS security dashboard bringing together GuardDuty findings,
-        CloudWatch metrics, IAM activity, and alert workflows into
-        one monitoring view.
+        A working AWS monitoring view for the signals I care about most:
+        GuardDuty findings, CloudWatch metrics, IAM activity, and the alerts
+        that help turn noisy events into something actionable.
       </p>
     </div>
 
@@ -96,22 +99,24 @@
         <div class="feature-card">
           <h3>Real-Time Threat Monitoring</h3>
           <p>
-            Tracks authentication activity, API behaviour,
-            and infrastructure events across AWS services.
+            Tracks sign-in activity, API behaviour, and infrastructure events
+            so unusual patterns are easier to spot early.
           </p>
         </div>
 
         <div class="feature-card">
           <h3>AWS Native Integrations</h3>
           <p>
-            Built with CloudWatch, Security Hub, IAM, Lambda, GuardDuty, and centralized logging.
+            Uses CloudWatch, Security Hub, IAM, Lambda, GuardDuty, and centralized
+            logging instead of trying to bolt on a separate monitoring stack.
           </p>
         </div>
 
         <div class="feature-card">
           <h3>Incident Response Automation</h3>
           <p>
-            Automated alerts and response flows that reduce manual investigation and response work.
+            Sends alerts into response flows so the first investigation step is
+            already prepared, not rebuilt from scratch each time.
           </p>
         </div>
 
@@ -146,17 +151,19 @@
 
         <h3>AWS Static Website & CI/CD Pipeline</h3>
 
-        <p>Built an AWS static hosting setup using CloudFront,
+        <p>
+            I moved the site delivery into a repeatable AWS setup using CloudFront,
             private S3 origins, Terraform, and GitHub Actions.
             </p>
 
             <p>
-            Automated infrastructure provisioning and deployments,
-            reduced manual configuration work, and tightened origin access controls.
+            The useful part was removing the click-by-click AWS setup: infrastructure
+            changes now live in code, and the S3 bucket is no longer directly exposed.
             </p>
 
             <p>
-            Next: blue/green deployments and infrastructure drift detection.
+            What I would improve next: add drift checks and a safer rollback path
+            for deployments.
             </p>
 
         <div class="tags">
@@ -185,17 +192,18 @@
         <h3>Secure AWS Static Website Architecture</h3>
 
         <p>
-            Built a security-focused static website architecture
-            using CloudFront, private S3 origins, and AWS WAF.
+            I hardened the static site path around CloudFront, private S3 origins,
+            and AWS WAF instead of leaving the bucket as the main public surface.
             </p>
 
             <p>
-            Added origin isolation, managed WAF protections,
-            and tighter delivery controls to reduce direct exposure.
+            The main design choice was to keep direct origin access closed and let
+            managed WAF rules handle common edge threats before traffic reached the site.
             </p>
 
             <p>
-            Next: real-time monitoring and automated policy checks.
+            What I would improve next: connect WAF logs to monitoring and add policy
+            checks before Terraform changes are applied.
             </p>
 
         <div class="tags">
@@ -224,17 +232,18 @@
         <h3>Serverless Contact Form API</h3>
 
         <p>
-            Built a serverless contact API using API Gateway,
+            I built the contact form as a small serverless flow with API Gateway,
             Lambda, SES, and CloudFront.
             </p>
 
             <p>
-            Added request validation, logging, and edge protections
-            to improve reliability and reduce abuse.
+            I focused on the boring but important parts: validation before Lambda,
+            useful logs for failed requests, and edge protections to slow down spam.
             </p>
 
             <p>
-            Next: queue-based retries and centralized monitoring.
+            What I would improve next: add queue-based retries so email delivery
+            failures are not lost after a single Lambda attempt.
             </p>
 
         <div class="tags">
@@ -263,17 +272,18 @@
         <h3>Secure Serverless Backend API</h3>
 
         <p>
-          Built a serverless backend using Cognito,
-          JWT authorization, API Gateway, and Terraform.
+          I put together a serverless API using Cognito, JWT authorization,
+          API Gateway, Lambda, and Terraform.
           </p>
 
           <p>
-          Added structured logging, throttling controls,
-          and least-privilege IAM policies.
+          The goal was to keep identity checks at the API boundary, limit what
+          each Lambda function can access, and log enough context to debug failures.
           </p>
 
           <p>
-          Next: distributed tracing and multi-region resilience.
+          What I would improve next: add tracing across API Gateway and Lambda,
+          then test how the service behaves under regional failure scenarios.
           </p> 
 
         <div class="tags">
@@ -447,7 +457,7 @@
 
     <div class="section-header">
       <p class="section-label">CURRENTLY EXPLORING</p>
-      <h2>Exploring Next -  Cloud Security Capabilities</h2>
+      <h2>What I Am Learning Next</h2>
     </div>
 
     <div class="hero-stack">
@@ -472,11 +482,10 @@
     </div>
 
     <p>
-        I like building cloud systems that are secure,
-        automated, and straightforward to operate.
-        My focus is usually AWS, serverless architectures,
-        Infrastructure as Code, and improving visibility
-        through monitoring and logging.
+        I try to build cloud systems that are understandable after the first
+        deployment, not just impressive in a diagram. That usually means small
+        permissions, repeatable infrastructure, clear logs, and enough monitoring
+        to explain what happened when something breaks.
         </p>
 
   </section>
